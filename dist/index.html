@@ -4,15 +4,42 @@
     <meta charset="UTF-8">
     <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="main.js"></script>    
+    <script defer src="main.js" type="module"></script>    
 </head>
 <body>
     <div class="content">
         <nav class="app-nav">
+            <h1>Projects</h1>
+            <hr>
+            <ul>
+            </ul>
         </nav>
         <main class="app-main">
         </main>
-        <footer></footer>
+        <footer>
+            <p class="new-project-button">+ New Project</p>
+            <p class="new-task-button">+ New Task</p>
+        </footer>
+    </div>
+    <div class="modal">
+        <div class="modal-popup project-modal">
+            <h2 class="title">Create Project</h2>
+            <div>
+                <div>
+                    <label for="title-input">Title</label>
+                    <input type="text" id="title-input">
+                </div>
+                <div>
+                    <label for="desc-input">Description</label>
+                    <textarea id="desc-input" name="desc-input" cols="30" rows="10" placeholder="Enter your description here..."></textarea>
+                </div>
+                <div>
+                    <label for="date-input">Date</label>
+                    <input type="date" id="date-input">
+                </div>
+            </div>
+            <button>Confirm</button>
+        </div>
     </div>
 
 </body>
