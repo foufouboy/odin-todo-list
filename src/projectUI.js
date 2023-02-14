@@ -68,7 +68,8 @@ export const ProjectsUI = (function() {
                         task.id,
                         task.title,
                         task.desc,
-                        task.date
+                        task.date,
+                        task.completed
                     );
                 }
             }
@@ -111,13 +112,15 @@ export const ProjectsUI = (function() {
     })();
 
     const tasks = (function() {
-        function addTask(id, title, desc, date = null) {
+        function addTask(id, title, desc, date = null, completed = false) {
             const task = document.createElement("div");
             task.classList.add("task");
             task.setAttribute("data-id", id);
 
             const taskInput = document.createElement("input");
             taskInput.setAttribute("type", "checkbox");
+
+            if (completed) taskInput.checked = true;
 
             const taskDate = document.createElement("p");
             taskDate.classList.add("task-date");

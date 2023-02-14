@@ -45,6 +45,7 @@ const ProjectsController = (function(){
             task.addEventListener("mouseenter", tasks.taskHovered);
             task.addEventListener("mouseleave", tasks.taskUnhovered);
 
+            if (task.firstChild.checked) task.classList.add("task-checked");
             task.firstChild.addEventListener("click", tasks.checkBoxClicked);
         });
     }
