@@ -92,7 +92,9 @@ const ProjectsController = (function(){
 
             deleteIcon.addEventListener("click", (e) => {
 
-                e.target.parentNode.remove();
+                const taskId = e.target.parentNode.dataset.id;
+
+                deleteTaskClicked(taskId);
             });
 
         }
@@ -102,9 +104,7 @@ const ProjectsController = (function(){
         
         }
 
-        function deleteTaskClicked(e) {
-
-            const taskId = e.target.dataset.id;
+        function deleteTaskClicked(id) {
 
             ProjectsUI.tasks.deleteTask(id);
             ProjectsData.deleteTask(id);
@@ -169,6 +169,7 @@ const ProjectsController = (function(){
                 const projectData = ProjectsData.getProject(projectToShow.dataset.id);
                 ProjectsUI.projects.show(projectData);
                 actualProject.remove();  
+                actualizeEvents();
             });
         }
 
